@@ -1,0 +1,64 @@
+./vm.o ../task1.bin
+
+ *** Virtual Machine Execution Started *** 
+
+Congratulations! if you are reading this then you have successfully used your
+VM implementation to execute the program which displays this message. Or, at
+least figured out how to decode this directly from the program image.
+
+Either way, please include this output text in your submission zip-file in
+a file named task1/result.txt.
+
+Now, on to part II...
+
+For this task, you will need to use the provided task2.bin file which is
+another VM image. This VM program reads in a string of single character
+"commands" on stdin using the VM getc instruction. Using these commands it
+then generates a graphics file in SVG format as output.
+
+Below are six examples of input command strings:
+
+RULDX
+
+PRUPRULDX
+
+PRRUPCBEAX
+
+PRUP J R K PRP JJJJJ R KKKKK PRP JJJJJJJJJ R X
+
+PRUP M U N PUP MMMMM U NNNNN PUP MMMMMMMMM U X
+
+PRUP KKKKKKKKKK KKKKKKKKKK NNNNNNNNNN A X
+
+To complete this task you must first determine what the commands demonstrated
+above do. Then, write a program which generates a series of commands which can
+be fed into the VM program to produce an image which looks similar to the
+bitmapped image in the provided image.png file. Note that the image
+need only look similar. A bit-identical image is not required (although, you
+may attempt this if you wish).
+
+Credit will be given for solutions with smaller numbers of commands to generate
+your image and more accurate images. Furthermore, your answer may only consist
+of a maximum of 20,000 commands. The task2.bin image will ignore any commands
+after 20,000.
+
+Exactly how you generate the commands or how similar your image is is up to
+you.  However, as with your VM implementation, you must submit any source-code
+or scripts that you write. Additionally you MUST also supply the commands used
+to generate your final image in the task2/result.txt file in your submission
+zip-file. You DO NOT need to submit your final SVG file.
+
+Hints:
+* Make sure your VM does not produce extra output (for example debug messages)
+  which end up mixed in with the SVG text.
+
+* If you are looking for programs to display an SVG image you might try;
+  Firefox, Inkscape or ImageMagick. All of these are open-source programs and
+  freely available for download for a variety of software platforms.
+
+* Spaces in the input are a no-op command but are counted towards your 20,000
+  characters.
+
+* Command strings must be terminated by an 'X'.
+
+ *** Virtual Machine Execution Ended *** 

@@ -1,0 +1,43 @@
+Virtual Machine: Task 1.
+
+Before begining, please make sure to use a Linux OS machine and that gcc and firefox are installed.
+
+A) - TASK1 DEVELOPMENT FOLDER consists of the following files:
+
+  1 - This README file
+  2 - vm.c -- The Virtual Machine implemented in C language
+  3 - Makefile  
+  4 - validate.sh
+  5 - bin (folder)
+  6 - ../result.txt
+
+  2 - vm.c = The VM C file was strictly developed according to specification in task1.txt
+    Moreover, it has been coded to be easily understood by any developer, rather
+    than implementing clever and difficult to understand. The C Language was selected for compatibility
+    among different computers and devices. Preferrebly, use a linux machine for compiling this source as
+    it uses gcc compiler. 
+
+  3 - Makefile = To make it easy for compilation, debug, validation and task1 execution
+      The options are:
+		make all     -    Compiles the VM and generates a vm.o binary execution file
+		make validation - Compiles the VM and runs all testXX.bin sequentially searching for an 'X'
+		make debug   -    Compiles the VM with gdb symbols for debugging purposes
+		make task1   -    Executes task1 and displays task2 exercise
+  		make clean   -    Deletes vm.o binary execution file		
+
+  4 - validate.sh = Bash script to validate all .bin files sent for validation purposes (This is used in make validation)
+
+  5 - bin folder = Contains all .bin files task1.bin, testXX.bin, where XX = 00 to 25.
+
+  6 - ../result.txt is the result from VM execution using task1.bin. (As required by task1.txt) 
+
+
+B) - TO COMPILE AND EXECUTE THE VIRTUAL MACHINE
+
+   1. On a linux terminal, extract the contents of task1 into a <base folder>.
+   2. <base folder>/task1/src/> make all
+   3. <base folder>/task1/src/> make task1
+   4. Read task 2. It has been previously ran and is in result.txt  
+
+   Note: Make error is not an actual error
+

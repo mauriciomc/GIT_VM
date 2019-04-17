@@ -1,0 +1,62 @@
+Task 2. Creating the smallest pattern for generating an svg similar image.png
+
+Before begining, please make sure to use a Linux OS machine and that gcc and firefox are installed.
+
+A) - Task2 folder contains the following files:
+
+   1 - This overview file
+   2 - Makefile
+   3 - result.txt
+   4 - task2.svg
+   5 - task2.bin
+
+
+   2 - This make file consists of the following operations:
+       make task2 - Runs VM with task2.bin argument, removes undesired output from vm.o and creates task2.svg
+                    which is the outcome of a sequence inserted at runtime.
+
+       make clean - Removes task2.svg
+
+   3 - result.txt - Contains the generated sequence of patterns to be inserted at VM runtime, so task2.svg can be created
+   4 - task2.svg  - SVG file result from the execution of VM and task2.bin image
+   5 - task2.bin  - VM Image file of the SVG generator
+
+
+B) - Execution. In order to replicate and execute task2, run the following commands.
+   
+   1 - Extract Task2 folder to the same base directory as Task1, s.t. they have the hierarchy as follows:
+       --- <GIT_VM>
+                |_________ task1/
+                |_________ task2/ 
+   
+   2 - In the command line, run:
+      a. #<GIT_VM>/task2/source-code:> make task2
+      b. "Type the sequence shown in result.txt"
+
+      c. #<GIT_VM>/task2/source-code: > firefox task2.svg
+
+
+C) -  ALGORITHM SELECTION
+
+    In order to generate the pattern for generating the the target image, I resorted to an operations research shortest path algorithm, to reduce
+    the character count in the sequence. This algorithm was implemented like an ASIC routing one, namely (Maze route).This approach was selected 
+    due to the way the program generates the svg based on input pattern. These type of algorithms are usually used in different applications: 
+       a) Routing in Engineering: PCB, ASICs (Maze Route) and FPGAs. 
+       b) Mailman delivery.
+       c) Telescope operation for star/planet cataloguing.
+       d) Hard Disk needle operation to reduce fatigue.
+      
+    This explanation makes more sense while looking at task2_routing_explained.pdf. Since the starting point is at the top left corner,
+    the easiest way (and shortest path) is to replicate the first wave pattern and then go to the next drawing point. i.e. the closest 
+    wave pattern to the ending position of the first wave. By adopting this strategy, I could generate some cost functions and determine 
+    which was the best strategy for each moment. The adopted routing pattern is shown in the picture and consists of interleaving wave patterns
+    (in black) and positioning patterns (in red).
+    Moreover, drawing the wave patterns at the corners first, given a certain situation, rather than selecting another closest wave pattern to draw, 
+    I could minimize later routing costs in the end. Thus, it is much better being penalized the way shown in the figure than being penalized 
+    by long patterns in the end.   
+
+
+
+
+
+    
